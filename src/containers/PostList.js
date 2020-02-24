@@ -30,10 +30,10 @@ class PostList extends Component {
         }
     }
 
-    componentWillUn() {
+    componentWillUnmount() {
         document.removeEventListener('scroll', this.handleScrollFetchPosts)
     }
-
+   
     handleScrollFetchPosts = () => {
         const totalHeight = document.body.scrollHeight;
         const innerHeight = window.innerHeight;
@@ -45,6 +45,7 @@ class PostList extends Component {
             }
         }
     }
+
     render() {
         const { posts, isFetching } = this.props
         return (
@@ -64,7 +65,6 @@ class PostList extends Component {
                                     // isLiked={_.indexOf(likedPostIds, post.id) === -1 ? false : true}
                                     onLike={this.handleLike}
                                     onDisLike={this.handleDisLike}
-                                    
                                 />
                             )
                         })

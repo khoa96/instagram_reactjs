@@ -30,3 +30,9 @@
 .CommentItem__delete-button:hover {
   color: #333;
 }
+.comment-content { 
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
